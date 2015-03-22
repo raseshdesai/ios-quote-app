@@ -83,13 +83,17 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-YG-ZPo">
-                                <rect key="frame" x="16" y="139" width="288" height="371"/>
+                                <rect key="frame" x="16" y="139" width="288" height="141"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v1D-g5-CyZ">
+                                <rect key="frame" x="16" y="312" width="288" height="136"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="processedImage" destination="v1D-g5-CyZ" id="u4U-Hk-wZ6"/>
                         <outlet property="userEnteredQuoteLabel" destination="TdL-US-J0U" id="ulo-Mh-Fr8"/>
                         <outlet property="userSelectedImageToDisplay" destination="nLT-YG-ZPo" id="ymb-VN-0sP"/>
                     </connections>

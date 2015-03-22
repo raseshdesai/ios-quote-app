@@ -14,7 +14,13 @@ class ProcessorViewController: UIViewController {
     
     @IBOutlet weak var userSelectedImageToDisplay: UIImageView!
     
+    @IBOutlet weak var processedImage: UIImageView!
+    
     var passedPathToUserSelectedSavedImage: String = "path-not-passed-by-pick-image-controller"
+    
+    var context: CIContext!
+    var filter: CIFilter!
+    var beginImage: CIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +37,28 @@ class ProcessorViewController: UIViewController {
         
         if NSFileManager.defaultManager().fileExistsAtPath(passedPathToUserSelectedSavedImage, isDirectory: nil) {
             userSelectedImageToDisplay.image = UIImage(contentsOfFile: passedPathToUserSelectedSavedImage)!
+            performImageProcessing()
         }
+    }
+    
+    func performImageProcessing(){
+        // 1
+        beginImage = CIImage(image: userSelectedImageToDisplay.image)
+        
+        // 2 (build a filter that'll be applied on your image)
+        filter = CIFilter(name: "CISepiaTone")
+        filter.setValue(beginImage, forKey: kCIInputImageKey)
+        filter.setValue(0.5, forKey: kCIInputIntensityKey)
+        
+        // 3 (reusing existing context for better performance)
+        context = CIContext(options:nil)
+        
+        //4 (create CGImage from filter's output image)
+        let cgimg = context.createCGImage(filter.outputImage, fromRect: filter.outputImage.extent())
+        
+        //4 (build new image and show)
+        let newImage = UIImage(CGImage: cgimg)
+        self.processedImage.image = newImage
     }
 
     override func didReceiveMemoryWarning() {

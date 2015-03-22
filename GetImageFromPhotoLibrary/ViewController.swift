@@ -47,9 +47,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         var userEnteredQuote: String? = NSUserDefaults.standardUserDefaults().objectForKey("userEnteredQuote") as? String
         println(userEnteredQuote)
         
-        //Remove user selected file
-        println("Removing: \(passedPathToUserSelectedSavedImage): ")
-        NSFileManager.defaultManager().removeItemAtPath(passedPathToUserSelectedSavedImage, error: nil)
+        //Not needed anymore, processor will remember the app user selected at any point during the session
+//        removeUserSelectedFile()
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +62,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             var processorViewController = segue.destinationViewController as ProcessorViewController
             processorViewController.passedPathToUserSelectedSavedImage = passedPathToUserSelectedSavedImage
         }
+    }
+    
+    func removeUserSelectedFile(){
+        println("Removing: \(passedPathToUserSelectedSavedImage): ")
+        NSFileManager.defaultManager().removeItemAtPath(passedPathToUserSelectedSavedImage, error: nil)
     }
 }
 
