@@ -88,6 +88,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v1D-g5-CyZ">
                                 <rect key="frame" x="16" y="312" width="288" height="136"/>
                             </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GEi-Bq-7dJ">
+                                <rect key="frame" x="14" y="468" width="292" height="31"/>
+                                <connections>
+                                    <action selector="updateIntensity:" destination="i6i-fp-HI7" eventType="valueChanged" id="Mjj-7W-8dO"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

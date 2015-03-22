@@ -22,6 +22,12 @@ class ProcessorViewController: UIViewController {
     var filter: CIFilter!
     var beginImage: CIImage!
     
+    
+    @IBAction func updateIntensity(sender: UISlider!) {
+        let sliderValue = sender.value
+        performImageProcessing(sliderValue)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,18 +43,18 @@ class ProcessorViewController: UIViewController {
         
         if NSFileManager.defaultManager().fileExistsAtPath(passedPathToUserSelectedSavedImage, isDirectory: nil) {
             userSelectedImageToDisplay.image = UIImage(contentsOfFile: passedPathToUserSelectedSavedImage)!
-            performImageProcessing()
+            performImageProcessing(0.5)
         }
     }
     
-    func performImageProcessing(){
+    func performImageProcessing(intensityValue: Float){
         // 1
         beginImage = CIImage(image: userSelectedImageToDisplay.image)
         
         // 2 (build a filter that'll be applied on your image)
         filter = CIFilter(name: "CISepiaTone")
         filter.setValue(beginImage, forKey: kCIInputImageKey)
-        filter.setValue(0.5, forKey: kCIInputIntensityKey)
+        filter.setValue(intensityValue, forKey: kCIInputIntensityKey)
         
         // 3 (reusing existing context for better performance)
         context = CIContext(options:nil)
