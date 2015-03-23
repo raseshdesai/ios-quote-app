@@ -10,7 +10,7 @@ IOS Quotes App
 	3. ProcessorViewController - Gets the quote and Image and displays it
 	
 ### Pending items ###
-	1. Layer quote on image
-	2. Refactoring/renaming (app and controllers)
-	3. Better persistent store v/s NSUserDefaults like Core Data or Parse
+	1. Layer quote on image - complete but needs cleanup
+	2. Refactoring/renaming (app and controller)
+	3. Better persistent store v/s NSUserDefaults like Core Data or Parse (if needed)
 	4. Run on iPhone (works on Simulator only)
