@@ -14,3 +14,4 @@ IOS Quotes App
 	2. Refactoring/renaming (app and controller)
 	3. Better persistent store v/s NSUserDefaults like Core Data or Parse (if needed)
 	4. Run on iPhone (works on Simulator only)
+	5. Upload a good .gitingore for ios
