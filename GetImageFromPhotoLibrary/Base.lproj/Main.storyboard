@@ -68,13 +68,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdL-US-J0U">
-                                <rect key="frame" x="16" y="57" width="288" height="74"/>
+                                <rect key="frame" x="16" y="57" width="288" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQt-lV-aUB">
-                                <rect key="frame" x="110" y="518" width="109" height="30"/>
+                                <rect key="frame" x="195" y="518" width="109" height="30"/>
                                 <state key="normal" title="Start over again">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -82,24 +82,46 @@
                                     <segue destination="MxD-fo-nku" kind="show" id="5TP-ly-AfK"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-YG-ZPo">
-                                <rect key="frame" x="16" y="139" width="288" height="141"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v1D-g5-CyZ">
-                                <rect key="frame" x="16" y="312" width="288" height="136"/>
+                                <rect key="frame" x="16" y="434" width="288" height="38"/>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GEi-Bq-7dJ">
-                                <rect key="frame" x="14" y="468" width="292" height="31"/>
+                                <rect key="frame" x="14" y="480" width="292" height="31"/>
                                 <connections>
                                     <action selector="updateIntensity:" destination="i6i-fp-HI7" eventType="valueChanged" id="Mjj-7W-8dO"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6h-ic-EMP">
+                                <rect key="frame" x="87" y="518" width="80" height="30"/>
+                                <state key="normal" title="Save Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="savePhoto:" destination="i6i-fp-HI7" eventType="touchUpInside" id="zy4-2z-0zc"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DM4-0f-mXB">
+                                <rect key="frame" x="16" y="109" width="288" height="261"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWm-hU-JpW">
+                                <rect key="frame" x="16" y="517" width="36" height="30"/>
+                                <state key="normal" title="Draw">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="draw:" destination="i6i-fp-HI7" eventType="touchUpInside" id="ATH-gW-cDF"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-YG-ZPo">
+                                <rect key="frame" x="16" y="378" width="288" height="39"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="processedImage" destination="v1D-g5-CyZ" id="u4U-Hk-wZ6"/>
+                        <outlet property="testImage" destination="DM4-0f-mXB" id="odA-Rn-UKI"/>
                         <outlet property="userEnteredQuoteLabel" destination="TdL-US-J0U" id="ulo-Mh-Fr8"/>
                         <outlet property="userSelectedImageToDisplay" destination="nLT-YG-ZPo" id="ymb-VN-0sP"/>
                     </connections>
